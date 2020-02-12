@@ -1,0 +1,263 @@
+button, input[type="submit"], input[type="reset"] {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+}
+
+::-webkit-scrollbar {
+    width: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #008888; 
+	cursor: pointer;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: #019b9b; 
+	cursor: pointer	;
+}
+
+body {
+	position: fixed;
+	align-items: center;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin: 0;
+	padding: 10px;
+	width: calc(100% - 20px);
+	height: calc(100% - 20px);
+	background-color: rgb(19, 39, 42);
+}
+
+#cafe {
+	position: relative;
+	width: 100%;
+	max-width: 1200px;
+	min-width: 600px;
+	height: 100%;
+	max-height: 600px;
+	box-sizing: border-box;
+}
+
+#cafe-header {
+	box-sizing: border-box;
+	border: 1px solid rgb(110, 79, 57, 0.8);
+	border-bottom-color: transparent;
+	position: relative;
+	width: 100%;
+	height: 30px;
+	font: 15px Verdana;
+	color: #EFCE8F;
+	background-image: linear-gradient(rgb(63, 43, 29), rgb(84, 58, 40));
+    display: flex;
+    align-items: center;
+	justify-content: center;
+}
+
+#cafe-body {
+	display: table;
+	border-radius: 0 0 5px 5px;
+	position: relative;
+	width: 100%;
+	height: calc(100% - 30px);
+	background-image: linear-gradient(rgb(19, 39, 42), rgb(34, 64, 69));
+}
+
+#topics-body {
+	display: table-cell;
+	position: relative;
+	width: 40%;
+	height: 100%;
+	min-width: 200px;
+}
+
+#topic-body {
+	position: relative;
+	overflow-y: scroll;
+	width: 100%;
+	height: 100%;
+	background-color: rgb(19, 39, 42);
+}
+
+#create-new-topic {
+	position: absolute;
+	margin: 5px;
+	width: calc(100% - 10px);
+	bottom: 0;
+}
+
+#message-input {
+	position: relative;
+	margin: 5px;
+	margin-top: 0;
+	width: calc(100% - 10px);
+}
+
+#send-message {
+	position: relative;
+	margin: 5px;
+	margin-top: 0;
+	width: calc(100% - 10px);
+}
+
+#messages-body {
+	position: absolute;
+	width: 100%;
+}
+
+#player-menu {
+	font: 12px Verdana;
+	width: 72px;
+	position: fixed;
+	visibility: hidden;
+}
+
+#player-menu ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	border: 1px solid rgb(255, 224, 181);
+	background-color: rgb(30, 61, 66);
+}
+
+#player-menu > ul > li {
+	position: relative;
+	cursor: pointer;
+	padding: 5px;
+	color: #C2C2DA;
+	background-color: rgb(30, 61, 66);
+}
+
+#player-menu > ul > li:hover {
+    filter: brightness(150%);
+}
+
+#player-menu > ul > li:nth-child(even) {
+	background-color: rgb(31, 76, 83);
+}
+
+.top-message {
+	padding-top: 2px;
+}
+
+.message {
+	display: table;
+	position: relative;
+	margin: 5px;
+	width: calc(100% - 10px);
+	background-color: #22464d;
+	color: #C2C2DA;
+	font: 12px Verdana;
+}
+
+.message-content {
+	vertical-align: top;
+	display: table-cell;
+	position: relative;
+	overflow-x: scroll;
+	vertical-align: top;
+	padding: 0 4px 0 4px;
+	width: 100%;
+	max-width: 0;
+	overflow: hidden;
+	color: white;
+}
+
+.message-text {
+	word-wrap: break-word;
+	padding-bottom: 2px;
+	color: #C2C2DA;
+}
+
+.message-username {
+	position: relative;
+	color: white;
+	float: left;
+}
+
+.message-date {
+	position: relative;
+	color: #6C77C1;
+	float: right;
+}
+
+.user-photo {
+	display: table-cell;
+	position: relative;
+	float: left;
+	border: 1px solid black;
+	width: 48px;
+}
+
+.user-photo:hover {
+    filter: brightness(150%);
+	cursor: pointer;
+}
+
+.no-text-pass {
+	display: block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;	
+}
+
+.cant-copy {
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;	
+}
+
+.btn-cafe {
+	box-sizing: border-box;
+	position: relative;
+	text-align: center;
+    width: 40%;
+    border-radius: 5px;
+    padding: 5px;
+	font: 12px Verdana;
+    border-left: 1px solid #7a8d93;
+    border-top: 1px solid #7a8d93;
+	color: #C2C2DA;
+	background-color: #314e57;
+}
+
+.btn-cafe:hover {
+    background-color: #395963;
+    color: #EFCE8F;
+    cursor: pointer;
+}
+
+.input-cafe {
+    resize: none;
+    overflow: hidden;
+	position: relative;
+	box-sizing: border-box;
+    border-left: 1px solid black;
+    border-top: 1px solid black;
+    border-bottom: 1px solid #616161;
+    border-right: 1px solid #616161;
+    background-color: #121212;
+	border-radius: 4px;
+    color: #C2C2DA;
+	padding-left: 7px;
+    width: 100%;
+    height: 22px;
+}
+
+.input-cafe::placeholder {
+    color: #6C77C1;
+}
+
+.input-cafe:focus {
+	outline: none;
+}
