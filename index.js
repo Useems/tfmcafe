@@ -73,7 +73,9 @@ function loadMessages(list) {
 }
 
 function removePlayerMenu() {
-	document.getElementById("player-menu").style.visibility = 'hidden';
+	let playerMenu = document.getElementById("player-menu");
+	playerMenu.style.visibility = 'hidden';
+	auto_grow(playerMenu);
 }
 
 function auto_grow(element) {
