@@ -24,28 +24,17 @@ button, input[type="submit"], input[type="reset"] {
 
 body {
 	margin: 0;
+	padding: 0;
+	font: 12px Verdana;
 }
 
-#bg {
-	padding: 10px;
-	width: calc(100% - 20px);
-	height: calc(100% - 20px);
-	position: fixed;
-	align-items: center;
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: center;
-	position: fixed;
-	background-image: linear-gradient(rgb(16, 33, 36), rgb(34, 83, 89), rgb(16, 33, 36));
-}
-
-#cafe {
+#render {
 	position: relative;
-	width: 100%;
+	margin: 20px;
+	width: calc(100% - 40px);
+	height: calc(100% - 40px);
+	min-height: 250px;
 	max-width: 1200px;
-	min-width: 600px;
-	height: 100%;
 	max-height: 600px;
 	box-sizing: border-box;
 	border: 1px solid rgb(110, 79, 57, 0.1);
@@ -57,6 +46,8 @@ body {
 	border-bottom-color: transparent;
 	position: relative;
 	width: 100%;
+	max-width: 1200px;
+	min-width: 600px;
 	height: 30px;
 	font: 15px Verdana;
 	color: #EFCE8F;
@@ -67,15 +58,19 @@ body {
 }
 
 #cafe-body {
+	position: relative;
 	display: table;
 	border-radius: 0 0 5px 5px;
-	position: relative;
 	width: 100%;
-	height: calc(100% - 30px);
+	height: 100%;
 	background-color: rgb(19, 39, 42, 0.6);
 }
 
-#topics-body {
+#send-message, #create-topic {
+	width: calc(100% - 10px);
+}
+
+#topics-body, #default-topic-body {
 	display: table-cell;
 	position: relative;
 	width: 40%;
@@ -84,31 +79,50 @@ body {
 }
 
 #topic-body {
+	display: table-cell;
 	position: relative;
 	overflow-y: scroll;
 	width: 100%;
 	height: 100%;
+	min-width: 1px;
+}
+
+#new-topic-body {
+	position: relative;
+	overflow-y: scroll;
+	width: 100%;
+	height: 100%;
+	min-width: 1px;
 }
 
 #create-new-topic {
 	position: absolute;
 	margin: 5px;
+	padding: 5px;
 	width: calc(100% - 10px);
 	bottom: 0;
 }
 
-#message-input {
+#message-input, #new-topic-message-input {
 	position: relative;
 	margin: 5px;
 	margin-top: 0;
 	width: calc(100% - 10px);
 }
 
-#send-message {
+#default-topic-body {
 	position: relative;
-	margin: 5px;
-	margin-top: 0;
-	width: calc(100% - 10px);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: row;
+	flex-wrap: wrap;	
+	width: 100%;
+}
+
+#default-topic-message {
+	font-size: 120px;
+	color: rgb(34, 70, 77);
 }
 
 #messages-body {
@@ -117,7 +131,6 @@ body {
 }
 
 #player-menu {
-	font: 12px Verdana;
 	width: 72px;
 	position: fixed;
 	visibility: hidden;
@@ -147,6 +160,106 @@ body {
 	background-color: rgb(31, 76, 83);
 }
 
+#login-username, #login-password, #login-button, #register-button {
+	margin: 3px;
+	height: 30px;
+	min-width: 10px;
+}
+
+#login-username {
+	color: #009D9D;
+}
+
+#login-password {
+	color: #EFCE8F;
+}
+
+#login-button, #register-button {
+	width: 100%;
+}
+
+#login-box {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	margin: 20px;
+}
+
+#login_screen {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: row;
+	flex-wrap: wrap;
+	width: 100%;
+	height: 100%;
+	background-color: rgb(19, 39, 42, 0.6);
+}
+
+#login-image {
+	margin-bottom: 10px;
+	width: 100%;
+	max-width: 150px;
+	margin: 25px 0 0 25px;
+}
+
+.quote {
+	padding-left: 24px;
+	color: #6C77C1;
+	font-size: 11px;
+}
+
+.likes {
+	position: relative;
+	padding-left: 2px;
+	float: left;
+}
+
+.send-message {
+	position: relative;
+	margin: 5px;
+	margin-top: 0;
+}
+
+.title-input {
+	padding-left: 8px;
+	width: 100%;
+	margin: 5px;
+	color: #BABD2F;
+	background: none;
+	border: none;
+	outline: none;
+}
+
+.title-input::placeholder {
+	color: #BABD2F;
+}
+
+.screen {
+	position: absolute;
+	overflow: hidden;
+	width: 100%;
+	max-width: 1200px;
+	min-width: 600px;
+	height: 100%;
+	max-height: calc(100% - 30px);
+	color: white;
+}
+
+.background {
+	display: flex;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	align-items: center;
+	justify-content: center;
+	flex-direction: row;
+	flex-wrap: wrap;
+	background-image: linear-gradient(rgb(16, 33, 36), rgb(34, 83, 89), rgb(16, 33, 36));
+}
+
 .top-message {
 	padding-top: 2px;
 }
@@ -158,7 +271,7 @@ body {
 	width: calc(100% - 10px);
 	background-color: #22464d;
 	color: #C2C2DA;
-	font: 12px Verdana;
+	
 }
 
 .message-content {
@@ -228,7 +341,7 @@ body {
     width: 40%;
     border-radius: 5px;
     padding: 5px;
-	font: 12px Verdana;
+	
     border-left: 1px solid #7a8d93;
     border-top: 1px solid #7a8d93;
 	color: #C2C2DA;

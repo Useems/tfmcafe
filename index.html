@@ -9,31 +9,54 @@
 		<title>Café</title>
 	</head>
 	<body>
-		<div id="bg">
-			<div id="cafe">
+		<div class="background">
+			<div id="render">
 				<header class="cant-copy no-text-pass" id="cafe-header">Café</header>
-				<div id="cafe-body">
-					<div id="topics-body">
-						<div id="topics"></div>
-						<div class="btn-cafe cant-copy no-text-pass" id="create-new-topic">Criar um novo tópico</div>
+				<div class="screen" id="login_screen">
+				<img class="cant-copy" id="login-image" src="./img/logo.png"></img>
+					<div id="login-box">
+						
+						<input class="input-cafe cant-copy" id="login-username" spellcheck="false" placeholder="Usuário"></input>
+						<input class="input-cafe cant-copy" id="login-password" spellcheck="false" type="password" placeholder="Senha"></input>
+						<div class="btn-cafe cant-copy no-text-pass" id="login-button">Entrar</div>
+						<div class="btn-cafe cant-copy no-text-pass" id="register-button">Registrar</div>
 					</div>
-					<div id="topic-body">
-						<div id="messages-body">
-							<div id="messages"></div>
-							<textarea class="input-cafe" id="message-input" oninput="auto_grow(this)" placeholder="Mensagem"></textarea>
-							<div class="btn-cafe cant-copy no-text-pass" id="send-message">Enviar</div>
+				</div>
+				<div class="screen" id="cafe">
+					<div id="cafe-body">
+						<div class="screen" id="topics-body">
+							<div id="topics"></div>
+							<div class="btn-cafe cant-copy no-text-pass" id="create-new-topic">Criar um novo tópico</div>
+						</div>
+						<div class="screen" id="default-topic-body">
+							<a class="cant-copy" id="default-topic-message">Café</a>
+						</div>
+						<div class="screen" id="topic-body">
+							<div id="messages-body">
+								<div id="messages"></div>
+								<textarea class="input-cafe" id="message-input" oninput="auto_grow(this)" maxlength="2000" spellcheck="false" placeholder="Mensagem"></textarea>
+								<div class="btn-cafe cant-copy no-text-pass send-message" id="send-message">Enviar</div>
+							</div>
+						</div>
+						<div class="screen" id="new-topic-body">
+							<div id="messages-body">
+								<input class="title-input cant-copy" id="title-input" spellcheck="false" maxlength="50" placeholder="Título"></input>
+								<textarea class="input-cafe" id="new-topic-message-input" oninput="auto_grow(this)" maxlength="2000" spellcheck="false" placeholder="Mensagem"></textarea>
+								<div class="btn-cafe cant-copy no-text-pass send-message" id="create-topic">Enviar</div>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-			<div id="player-menu">
-				<ul>
-					<li>Curtir</li>
-					<li>Não curtir</li>
-					<li>Citar</li>
-				</ul>
+				<div id="player-menu">
+					<ul>
+						<li id="like">Curtir</li>
+						<li id="deslike">Não curtir</li>
+						<li id="quote">Citar</li>
+					</ul>
+				</div>
 			</div>
 		</div>
 		<script type="text/javascript" src="./index.js"></script>
+		<script type="text/javascript" src="./screen.js"></script>
     </body>
 </html>
