@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http_equiv="X-UA-Compatible" content="ie=edge">
+		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="screen.css">
+		<link rel="shortcut icon" href="favicon.ico" />
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.1/socket.io.js"></script>
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+		<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+		<title>Café</title>
+	</head>
+	<body>
+		<div id="background">
+			<div id="render">
+				
+				<header class="cant_copy no_text_pass" id="cafe_header">
+					<div style="text-align: center; width: 100%;">
+						<span>Café</span>
+						<a id="leave" style="display: none; float: right; color: #d95252; margin-right: 10px;" onclick="localStorage.setItem('userId', null); localStorage.setItem('token', null);location.reload();">$leave</a>
+					</div>
+				</header>
+				<div class="screen" id="login_screen">
+					<div>
+						<img class="cant_copy" id="logo_image" src="./img/logo.png"></img>
+						<span class="error" id="login_error"></span>
+						<input id="login_username" class="input_cafe cant_copy login_input" spellcheck="false" autocomplete="off" placeholder="$username"></input>
+						<input id="login_password" class="input_cafe cant_copy login_input" spellcheck="false" autocomplete="off" type="password" placeholder="$password"></input>
+						<div class="btn_cafe cant_copy no_text_pass login_input" id="join_cafe">$join</div>
+						<div class="btn_cafe cant_copy no_text_pass login_input" id="goto_register_screen">$create_account</div>
+					</div>
+				</div>
+				<div class="screen" id="register_screen">
+					<div>
+						<img class="cant_copy" id="logo_image" src="./img/logo.png"></img>
+						<span class="error" id="register_error"></span>
+						<input id="register_username" class="input_cafe cant_copy login_input" spellcheck="false" placeholder="$username"></input>
+						<input id="register_avatar" class="input_cafe cant_copy login_input" spellcheck="false" placeholder="Avatar URL"></input>
+						<input id="register_password" class="input_cafe cant_copy login_input" spellcheck="false" type="password" placeholder="$password"></input>
+						<input id="register_reapeat_password" class="input_cafe cant_copy login_input" spellcheck="false" type="password" placeholder="$repeat_password"></input>
+						<div id="captcha" style="display: none;" class="g-recaptcha" data-sitekey="6LctK9oUAAAAAKsKsle6xTK-KgEoxQelfF19Zb4O"></div>
+						<div class="btn_cafe cant_copy no_text_pass login_input" id="register_cafe">$register</div>
+						<div class="btn_cafe cant_copy no_text_pass login_input" id="goto_login_screen">$back</div>
+					</div>
+				</div>
+				<div class="screen" id="cafe_screen">
+					<div id="cafe_body">
+						<div class="screen" id="topics_body">
+							<div id="topics"></div>
+							<div class="btn_cafe cant_copy no_text_pass" id="create_new_topic">$create_new_topic</div>
+						</div>
+
+						<div class="screen" id="default_topic_body">
+							<a class="cant_copy" id="default_topic_message">Café</a>
+						</div>
+
+						<div class="screen" id="topic_body">
+							<div id="messages_body">
+								<div id="messages"></div>
+								<textarea class="cant_copy input_cafe" id="message_input" oninput="auto_grow(this)" maxlength="500" spellcheck="false" placeholder="$message"></textarea>
+								<div class="btn_cafe cant_copy no_text_pass send_message" id="send_message">$send</div>
+									<div id="player_menu" style="visibility: hidden; height: 80px; top: 87px; left: 326px;">
+										<ul>
+											<li id="like">$like</li>
+											<li id="dislike">$dislike</li>
+											<li style="display: none;" id="remove">$remove_message</li>
+											<li style="display: none;" id="removeAvatar">$remove_avatar</li>
+											<li id="quote">$quote</li>
+										</ul>
+									</div>
+							</div>
+						</div>
+
+						<div class="screen" id="new_topic_body">
+							<div id="messages_body">
+								<input class="title_input cant_copy" id="title_input" spellcheck="false" maxlength="50" placeholder="$title">
+								<textarea class="cant_copy input_cafe" id="new_topic_message_input" oninput="auto_grow(this)" maxlength="2500" spellcheck="false" placeholder="$message"></textarea>
+								<div class="btn_cafe cant_copy no_text_pass send_message" id="create_topic">$send</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="screen" id="connection_screen">$connecting</div>
+				<div class="screen" id="disconnection_screen">$disconnected</div>
+			</div>
+		</div>
+
+		<!--    Libs    -->
+		<script src="./translate.js"></script>
+		<script type="text/javascript" src="./screen.js"></script>
+
+		<!--    Screens    -->
+		<script type="text/javascript" src="./screens/login.js"></script>
+		<script type="text/javascript" src="./screens/register.js"></script>
+		<script type="text/javascript" src="./screens/connection.js"></script>
+		<script type="text/javascript" src="./screens/cafe.js"></script>
+		<script type="text/javascript" src="./screens/default_topic_body.js"></script>
+		<script type="text/javascript" src="./screens/topics_body.js"></script>
+		<script type="text/javascript" src="./screens/new_topic_body.js"></script>
+		<script type="text/javascript" src="./screens/topic_body.js"></script>
+		<script type="text/javascript" src="./screens/disconnected.js"></script>
+
+		<!--    MainScript    -->
+		<script type="text/javascript" src="./index.js"></script>
+		
+		<!--	Show Page	-->
+		<style>body { opacity: 1; }</style>
+    </body>
+</html>

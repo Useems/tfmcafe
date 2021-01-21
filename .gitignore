@@ -1,0 +1,15 @@
+# Node build artifacts
+node_modules
+npm-debug.log
+
+# Environment
+.env
+
+# Bat files
+save.bat
+see log.bat
+server.bat
+
+# Local development
+*.dev
+.DS_Store
