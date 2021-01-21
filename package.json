@@ -19,7 +19,7 @@
     "nodemon": "^1.19.0",
     "path": "^0.12.7",
     "randomcolor": "^0.5.4",
-    "showdown": "^1.9.0",
+    "showdown": "^1.9.1",
     "socket.io": "^2.2.0",
 	"request": "^2.88.2"
   },
