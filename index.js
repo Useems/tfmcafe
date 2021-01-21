@@ -13,7 +13,7 @@ app.use(express.json())
 dotenv.config()
 
 // Database
-mongoose.connect(process.env.DB_CONNECT, {useNewUrlParser: true}, () => {
+mongoose.connect(process.env.DB_CONNECT, {useNewUrlParser: true, useUnifiedTopology: true}, () => {
     console.log('\x1b[33m', "[DB] Connected")
 })
 // Importing routers
