@@ -16,7 +16,7 @@
     "express": "^4.17.0",
     "is-image-url": "^1.1.8",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.11.13",
+    "mongoose": "^5.13.15",
     "path": "^0.12.7",
     "randomcolor": "^0.5.4",
     "showdown": "^1.9.1",
